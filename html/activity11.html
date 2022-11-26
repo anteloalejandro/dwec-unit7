@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order list</title>
+</head>
+<body>
+  <ul>
+    <li>Lorem ipsum dolor sit.</li>
+    <li>Recusandae accusantium quis laudantium?</li>
+    <li>Consequuntur impedit dolore aspernatur.</li>
+    <li>Officia, dignissimos cum! Nesciunt!</li>
+    <li>Obcaecati nostrum voluptatem cupiditate.</li>
+    <li>Iusto architecto repudiandae delectus!</li>
+    <li>Commodi nostrum aspernatur porro.</li>
+    <li>At deserunt est cumque?</li>
+    <li>Asperiores quaerat facilis reiciendis!</li>
+  </ul>
+</body>
+</html>
+
+<script>
+  setTimeout(() => {
+    if (confirm('Order list?')) {
+      const list = document.querySelector('ul')
+      let orderedList = [...list.children]
+      orderedList.sort((a, b) => a.textContent.localeCompare(b.textContent))
+      list.replaceChildren(...orderedList)
+    }
+  }, 3000)
+</script>
