@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jump to Google</title>
+</head>
+<body>
+  <p id="1"></p>
+</body>
+</html>
+
+<script>
+  const baseText = "Let's-a go in... "
+  const sec = document.getElementById('1')
+  sec.textContent = baseText + '5s'
+  let cont = 1
+  let tmp = setInterval(() => {
+    sec.textContent = `${baseText} ${5-cont}s`
+    cont++
+    if (cont > 5) {
+      clearInterval(tmp)
+      location = 'https://google.com'
+    }
+  }, 1000)
+
+</script>
