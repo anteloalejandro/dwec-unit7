@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/activity01.js"></script>
+</head>
+<body>
+  <ol>
+    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugiat voluptatum. Quo sint est possimus maiores, officia totam animi aspernatur debitis sunt quos eligendi optio eius. Perspiciatis repudiandae delectus doloremque.</li>
+    <li>Ducimus vitae unde voluptatibus, velit eveniet eum sequi alias sapiente voluptates dolor provident perferendis placeat natus sunt mollitia animi, nesciunt ad delectus magni quibusdam repellat consequuntur laborum. Quo, earum qui.</li>
+    <li>Quae debitis illo nesciunt tenetur pariatur blanditiis reiciendis deleniti amet harum soluta labore delectus atque exercitationem, officiis cumque. Doloribus, modi nostrum. Repellat dolore dolorem ab expedita, cum ipsa tempora quidem!</li>
+    <li>Repudiandae iusto doloribus veritatis, similique quasi ducimus, optio tempore pariatur voluptatem cumque porro, autem deleniti voluptates incidunt id. Nulla, reprehenderit dolore. Maiores corrupti ab animi est iure. Quidem, culpa officiis.</li>
+    <li>Ipsam quasi quidem similique aut, inventore quae eos? Natus blanditiis tenetur rem! Eveniet necessitatibus maxime impedit recusandae et maiores corrupti id distinctio aliquam, dignissimos fuga culpa sunt aut, repellendus ut.</li>
+    <li>Dicta, vel dolorum deserunt harum facere, aliquam placeat non aut molestiae doloribus possimus adipisci, expedita ipsum tenetur? Numquam debitis odio officiis tenetur, dignissimos incidunt, cumque necessitatibus adipisci deserunt, tempora provident.</li>
+    <li>Praesentium, recusandae? Laudantium iusto repudiandae, veniam atque obcaecati cumque. Tempore minus consectetur itaque eum et! Neque commodi aspernatur dignissimos nisi dolore provident, consectetur omnis, molestias, cumque esse debitis ratione tempora?</li>
+    <li>Fugit asperiores eum rem maxime, officia distinctio fugiat officiis molestiae ducimus eligendi? Accusantium nisi neque delectus nesciunt inventore quos! Placeat aliquam amet ipsam corporis minima maxime quos alias earum reprehenderit?</li>
+    <li>Consectetur nisi officiis reprehenderit sint, voluptate in dignissimos. Dolorum, numquam quas similique quod accusantium odio perspiciatis repellat ipsum cumque maiores voluptates vero laboriosam quis quibusdam! Explicabo ipsum tenetur inventore saepe!</li>
+  </ol>
+</body>
+</html>
+
+<script>
+  let list = document.querySelector('ol')
+
+  // Ask the user to input a number and some text until everything is right.
+  let list_number
+  let text
+  while (true) {
+    list_number = prompt('Type a number')
+    if (list_number === null)
+      throw new Error('Cancell button pressed')
+    list_number = list_number-1
+
+    text = prompt('What do you want to be inside the paragraph?')
+    if (text === null)
+      throw new Error('Cancell button pressed')
+
+    if (list_number >= 0 && list_number <= list.childElementCount + 1)
+      break
+    alert('Wrong number. Try again!')
+  }
+
+  insertLi(text, list, list_number)
+</script>
