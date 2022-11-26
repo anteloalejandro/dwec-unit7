@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Times visited</title>
+  <script src="../js/cookies.js"></script>
+</head>
+<body>
+  <script>
+    let value = cookiesToMap().has('visited') ?
+      (+cookiesToMap().get('visited')) + 1 : 0
+    document.cookie = 'visited=' + value + ';SameSite=Lax'
+  </script>
+  <h1> Total Visits:
+    <script>
+      document.write(cookiesToMap().get('visited'))
+    </script>
+  </h1>
+  <button onclick="deleteCookies('visited'); location.reload()">
+    Restart count
+  </button>
+</body>
+</html>
